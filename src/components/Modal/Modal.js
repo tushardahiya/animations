@@ -15,7 +15,16 @@ const modal = props => {
       timeout={animationTiming} 
       mountOnEnter 
       unmountOnExit
-      classNames="fade-slide">
+      classNames={{
+        enter:'',
+        enterActive:'ModalOpen',
+        exit:'',
+        exitActive:'ModalClosed',
+        //the ones below are used when initially rendering to dom and which is
+        //not conditional ..its gonna sstay there
+        appear:'',
+        appearActive:''
+      }}>
         <div className="Modal">
           <h1>A Modal</h1>
           <button className="Button" onClick={props.closed}>
